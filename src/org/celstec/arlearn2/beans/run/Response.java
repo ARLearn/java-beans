@@ -29,6 +29,8 @@ public class Response extends RunBean implements Comparable<Response>{
 	private Long responseItemId;
 	private Long timestamp;
     private Boolean revoked;
+    private Double lat;
+    private Double lng;
     
     public Response() {
     	
@@ -89,8 +91,24 @@ public class Response extends RunBean implements Comparable<Response>{
 	public void setRevoked(Boolean revoked) {
 		this.revoked = revoked;
 	}
-    
-	@Override
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    public Double getLng() {
+        return lng;
+    }
+
+    public void setLng(Double lng) {
+        this.lng = lng;
+    }
+
+    @Override
 	public boolean equals(Object obj) {
 		Response other = (Response ) obj;
 		return super.equals(obj) &&

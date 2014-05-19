@@ -42,6 +42,7 @@ public class MessageList extends Bean {
     }
 
     private Long serverTime;
+    private String resumptionToken;
 
 
     public List<Message> getMessages() {
@@ -64,6 +65,16 @@ public class MessageList extends Bean {
         this.serverTime = serverTime;
     }
 
+
+    public String getResumptionToken() {
+        return resumptionToken;
+    }
+
+    public void setResumptionToken(String resumptionToken) {
+        this.resumptionToken = resumptionToken;
+    }
+
+
     public static BeanSerializer serializer = new BeanSerializer() {
 
         @Override
@@ -75,6 +86,8 @@ public class MessageList extends Bean {
                     returnObject.put("serverTime", gal.getServerTime());
                 if (gal.getMessages() != null)
                     returnObject.put("messages", ListSerializer.toJSON(gal.getMessages()));
+                if (gal.getResumptionToken() != null) returnObject.put("resumptionToken", gal.getResumptionToken());
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -102,6 +115,9 @@ public class MessageList extends Bean {
                 giList.setServerTime(object.getLong("serverTime"));
             if (object.has("messages"))
                 giList.setMessages(ListDeserializer.toBean(object.getJSONArray("messages"), Message.class));
+
+            if (object.has("resumptionToken")) giList.setResumptionToken(object.getString("resumptionToken"));
+
         }
     };
 }

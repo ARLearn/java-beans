@@ -300,6 +300,7 @@ public class JsonBeanDeserializer  extends BeanDeserializer{
 		customDeserializerMapString.put("org.celstec.arlearn2.beans.game.GameAccessList", GameAccessList.deserializer);
 		customDeserializerMapString.put("org.celstec.arlearn2.beans.game.VariableDefinition", VariableDefinition.deserializer);
         customDeserializerMapString.put("org.celstec.arlearn2.beans.game.VariableEffectDefinition", VariableEffectDefinition.deserializer);
+        customDeserializerMapString.put("org.celstec.arlearn2.beans.game.Rating", Rating.deserializer);
 		customDeserializerMapString.put("org.celstec.arlearn2.beans.game.Config", cd);
 		customDeserializerMapString.put("org.celstec.arlearn2.beans.game.MapRegion", new MapRegion.MapRegionDeserializer());
 		customDeserializerMapString.put("org.celstec.arlearn2.beans.run.Location", new Location.Deserializer());

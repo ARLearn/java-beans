@@ -1,3 +1,4 @@
+.idea/*
 bin/*
 build/*
-ARLearnBeans.iml
+arlearn.beans.iml

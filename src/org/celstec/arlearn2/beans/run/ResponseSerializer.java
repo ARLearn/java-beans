@@ -36,7 +36,9 @@ public class ResponseSerializer extends RunBeanSerialiser {
 			if (runBean.getResponseItemId() != null) returnObject.put("responseItemId", runBean.getResponseItemId());
 			if (runBean.getTimestamp() != null) returnObject.put("timestamp", runBean.getTimestamp());
 			if (runBean.getRevoked() != null) returnObject.put("revoked", runBean.getRevoked());
-		} catch (JSONException e) {
+            if (runBean.getLat() != null) returnObject.put("lat", runBean.getLat());
+            if (runBean.getLng() != null) returnObject.put("lng", runBean.getLng());
+        } catch (JSONException e) {
 			e.printStackTrace();
 		}
 		return returnObject;
