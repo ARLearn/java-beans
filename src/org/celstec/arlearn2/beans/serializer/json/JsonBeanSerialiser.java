@@ -156,6 +156,11 @@ public class JsonBeanSerialiser extends BeanSerializer{
         customSerializerMap.put(ObjectCollectionDisplay.DisplayObject.class.getCanonicalName(), ObjectCollectionDisplay.displayObjectSerializer);
         customSerializerMap.put(ObjectCollectionDisplay.DisplayZone.class.getCanonicalName(), ObjectCollectionDisplay.displayZoneSerializer);
 
+        customSerializerMap.put(MatrixCollectionDisplay.class.getCanonicalName(), MatrixCollectionDisplay.matrixCollectionDisplaySerializer);
+        customSerializerMap.put(MatrixCollectionDisplay.DisplayColumn.class.getCanonicalName(), MatrixCollectionDisplay.displayColumnSerializer);
+        customSerializerMap.put(MatrixCollectionDisplay.DisplayRow.class.getCanonicalName(), MatrixCollectionDisplay.displayRowSerializer);
+
+
         customSerializerMap.put(Category.class.getCanonicalName(), Category.serializer);
         customSerializerMap.put(CategoryList.class.getCanonicalName(), CategoryList.serializer);
         customSerializerMap.put(GameCategory.class.getCanonicalName(), GameCategory.serializer);

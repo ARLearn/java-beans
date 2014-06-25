@@ -32,6 +32,12 @@ public class Account extends Bean {
 	public final static int ADMINISTRATOR = 1;
 	public final static int USER = 2;
 
+    public final static int FACEBOOK = 1;
+    public final static int GOOGLE = 2;
+    public final static int LINKEDIN = 3;
+    public final static int TWITTER = 4;
+    public final static int WESPOT = 5;
+
 	private String localId;	
 	private Integer accountType;
 	private String email;

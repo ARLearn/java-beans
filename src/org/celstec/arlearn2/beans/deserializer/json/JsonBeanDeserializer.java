@@ -340,6 +340,11 @@ public class JsonBeanDeserializer  extends BeanDeserializer{
         customDeserializerMapString.put("org.celstec.arlearn2.beans.generalItem.ObjectCollectionDisplay$DisplayObject", ObjectCollectionDisplay.displayObjectDeserializer);
         customDeserializerMapString.put("org.celstec.arlearn2.beans.generalItem.ObjectCollectionDisplay$DisplayZone", ObjectCollectionDisplay.displayZoneDeserializer);
 
+        customDeserializerMapString.put("org.celstec.arlearn2.beans.generalItem.MatrixCollectionDisplay", MatrixCollectionDisplay.matrixCollectionDisplayDeserializer);
+        customDeserializerMapString.put("org.celstec.arlearn2.beans.generalItem.MatrixCollectionDisplay$DisplayRow", MatrixCollectionDisplay.displayRowsDeserializer);
+        customDeserializerMapString.put("org.celstec.arlearn2.beans.generalItem.MatrixCollectionDisplay$DisplayColumn", MatrixCollectionDisplay.displayColumnDeserializer);
+
+
         customDeserializerMapString.put("org.celstec.arlearn2.beans.store.Category", Category.deserializer);
         customDeserializerMapString.put("org.celstec.arlearn2.beans.oauth.CategoryList", CategoryList.deserializer);
         customDeserializerMapString.put("org.celstec.arlearn2.beans.oauth.GameCategory", GameCategory.deserializer);
