@@ -94,7 +94,7 @@ public class Category extends Bean {
             if (object.has("categoryId")) bean.setCategoryId(object.getLong("categoryId"));
             if (object.has("title")) bean.setTitle(object.getString("title"));
             if (object.has("lang")) bean.setLang(object.getString("lang"));
-            if (object.has("deleted")) bean.setDeleted(object.getBoolean("lang"));
+            if (object.has("deleted")) bean.setDeleted(object.getBoolean("deleted"));
 
         }
     };

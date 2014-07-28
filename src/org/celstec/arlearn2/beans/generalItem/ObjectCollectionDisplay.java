@@ -41,6 +41,7 @@ public class ObjectCollectionDisplay extends GeneralItem {
 
     private List<DisplayZone> displayZones;
     private String richText;
+    private Boolean showWrong;
 
     public ObjectCollectionDisplay(){
 
@@ -52,6 +53,14 @@ public class ObjectCollectionDisplay extends GeneralItem {
 
     public void setRichText(String richText) {
         this.richText = richText;
+    }
+
+    public Boolean getShowWrong() {
+        return showWrong;
+    }
+
+    public void setShowWrong(Boolean showWrong) {
+        this.showWrong = showWrong;
     }
 
     public List<DisplayZone> getDisplayZones() {
@@ -132,7 +141,7 @@ public class ObjectCollectionDisplay extends GeneralItem {
             try {
                 if (ou.getDisplayZones() != null) returnObject.put("displayZones", ListSerializer.toJSON(ou.getDisplayZones()));
                 if (ou.getRichText() != null) returnObject.put("richText", ou.getRichText());
-
+                if (ou.getShowWrong() != null) returnObject.put("showWrong", ou.getShowWrong());
 
 
             } catch (JSONException e) {
@@ -197,7 +206,7 @@ public class ObjectCollectionDisplay extends GeneralItem {
 
             if (object.has("displayZones")) gi.setDisplayZones(ListDeserializer.toBean(object.getJSONArray("displayZones"), DisplayZone.class));
             if (object.has("richText")) gi.setRichText(object.getString("richText"));
-
+            if (object.has("showWrong")) gi.setShowWrong(object.getBoolean("showWrong"));
 
         }
 
