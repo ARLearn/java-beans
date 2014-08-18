@@ -29,6 +29,7 @@ public class ActionSerializer extends RunBeanSerialiser {
 		Action runBean = (Action) bean;
 		JSONObject returnObject = super.toJSON(bean);
 		try {
+            if (runBean.getIdentifier() != null) returnObject.put("identifier", runBean.getIdentifier());
 			if (runBean.getGeneralItemId() != null) returnObject.put("generalItemId", runBean.getGeneralItemId());
 			if (runBean.getGeneralItemType() != null) returnObject.put("generalItemType", runBean.getGeneralItemType());
 			if (runBean.getUserEmail() != null) returnObject.put("userEmail", runBean.getUserEmail());

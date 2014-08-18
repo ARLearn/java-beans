@@ -23,7 +23,8 @@ public class Action extends RunBean{
 
 //	public static final String TABLE_NAME = "Action"; 
 
-	private Long generalItemId;
+    private Long identifier;
+    private Long generalItemId;
 	private String generalItemType;
 	private String userEmail;
 	private Long time;
@@ -33,7 +34,15 @@ public class Action extends RunBean{
 		
 	}
 
-	public Long getGeneralItemId() {
+    public Long getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(Long identifier) {
+        this.identifier = identifier;
+    }
+
+    public Long getGeneralItemId() {
 		return generalItemId;
 	}
 

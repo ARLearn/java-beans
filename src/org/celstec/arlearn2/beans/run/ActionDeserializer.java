@@ -39,7 +39,8 @@ public class ActionDeserializer extends RunBeanDeserializer{
 	public void initBean(JSONObject object, Bean genericBean) throws JSONException {
 		super.initBean(object, genericBean);
 		Action bean = (Action) genericBean;
-		if (object.has("generalItemId")) bean.setGeneralItemId(object.getLong("generalItemId"));
+        if (object.has("identifier")) bean.setIdentifier(object.getLong("identifier"));
+        if (object.has("generalItemId")) bean.setGeneralItemId(object.getLong("generalItemId"));
 		if (object.has("generalItemType")) bean.setGeneralItemType(object.getString("generalItemType"));
 		if (object.has("userEmail")) bean.setUserEmail(object.getString("userEmail"));
 		if (object.has("time")) bean.setTime(object.getLong("time"));
