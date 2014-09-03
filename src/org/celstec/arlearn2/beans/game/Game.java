@@ -38,6 +38,7 @@ public class Game extends GameBean implements Serializable, Comparable<Game>{
     private String language;
     private Double lng;
     private Double lat;
+    private Integer rank;
 	
 	public Game() {
 		
@@ -157,6 +158,13 @@ public class Game extends GameBean implements Serializable, Comparable<Game>{
 		if (result != 0) return result;
 		return getGameId().compareTo(o.getGameId());
 	}
-	
+
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 }
 
