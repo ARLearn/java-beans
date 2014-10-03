@@ -41,7 +41,9 @@ public class GameSerializer extends GameBeanSerializer{
             if (game.getLat() != null) returnObject.put("lat", game.getLat());
             if (game.getLanguage() != null) returnObject.put("language", game.getLanguage());
             if (game.getRank() != null) returnObject.put("rank", game.getRank());
-		} catch (JSONException e) {
+            if (game.getTheme() != null) returnObject.put("theme", game.getTheme());
+
+        } catch (JSONException e) {
 			e.printStackTrace();
 		}
 		return returnObject;
