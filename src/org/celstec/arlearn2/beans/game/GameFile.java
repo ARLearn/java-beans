@@ -31,8 +31,17 @@ public class GameFile extends GameBean {
     private String md5Hash;
     private Long id;
     private Long size;
+    private String localRawRef;
 
     public GameFile() {
+    }
+
+    public String getLocalRawRef() {
+        return localRawRef;
+    }
+
+    public void setLocalRawRef(String localRawRef) {
+        this.localRawRef = localRawRef;
     }
 
     public String getPath() {

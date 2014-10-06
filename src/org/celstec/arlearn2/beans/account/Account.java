@@ -37,6 +37,7 @@ public class Account extends Bean {
     public final static int LINKEDIN = 3;
     public final static int TWITTER = 4;
     public final static int WESPOT = 5;
+    public final static int ECO = 6;
 
 	private String localId;	
 	private Integer accountType;
