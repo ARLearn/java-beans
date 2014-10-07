@@ -94,6 +94,7 @@ public class GameFile extends GameBean {
             if (object.has("md5Hash")) bean.setMd5Hash(object.getString("md5Hash"));
             if (object.has("id")) bean.setId(object.getLong("id"));
             if (object.has("size")) bean.setSize(object.getLong("size"));
+            if (object.has("localRawRef")) bean.setLocalRawRef(object.getString("localRawRef"));
         }
     };
 
@@ -107,6 +108,7 @@ public class GameFile extends GameBean {
                 if (gameFile.getId() != null) returnObject.put("id", gameFile.getId());
                 if (gameFile.getSize() != null) returnObject.put("size", gameFile.getSize());
                 if (gameFile.getMd5Hash() != null) returnObject.put("md5Hash", gameFile.getMd5Hash());
+                if (gameFile.getLocalRawRef() != null) returnObject.put("localRawRef", gameFile.getLocalRawRef());
             } catch (JSONException e) {
                 e.printStackTrace();
             }
