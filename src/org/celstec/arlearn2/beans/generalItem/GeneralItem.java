@@ -41,6 +41,8 @@ public class GeneralItem extends GameBean implements Comparable<GeneralItem>{
 	private Dependency dependsOn;
 
 	private Dependency disappearOn;
+
+	private Notification notification;
 	
 	public Boolean autoLaunch;
 
@@ -173,7 +175,17 @@ public class GeneralItem extends GameBean implements Comparable<GeneralItem>{
 		this.disappearOn = disappearOn;
 	}
 
+
+	public Notification getNotification() {
+		return notification;
+	}
+
+	public void setNotification(Notification notification) {
+		this.notification = notification;
+	}
+
 	public Boolean getAutoLaunch() {
+		if (autoLaunch == null) return false;
 		return autoLaunch;
 	}
 
@@ -253,7 +265,6 @@ public class GeneralItem extends GameBean implements Comparable<GeneralItem>{
 	}
 
 	@SuppressWarnings("ConstantConditions")
-    @Override
 	public int compareTo(GeneralItem other) {
         if (getSection()== null) setSection("");
         if (other.getSection()== null) other.setSection("");

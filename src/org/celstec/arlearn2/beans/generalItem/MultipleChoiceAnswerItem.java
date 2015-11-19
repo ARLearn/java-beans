@@ -23,6 +23,7 @@ import org.celstec.arlearn2.beans.Bean;
 public class MultipleChoiceAnswerItem extends Bean {
 
 	private Boolean isCorrect;
+    private String feedback;
 	private String answer;
 	private String nfcTag;
 	private String id;
@@ -62,7 +63,15 @@ public class MultipleChoiceAnswerItem extends Bean {
 		this.nfcTag = nfcTag;
 	}
 
-	public boolean equals(Object obj) {
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
+    }
+
+    public boolean equals(Object obj) {
 		MultipleChoiceAnswerItem other = (MultipleChoiceAnswerItem ) obj;
 		return super.equals(obj) && 
 			nullSafeEquals(getId(), other.getId()) && 

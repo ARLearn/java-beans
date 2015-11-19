@@ -153,7 +153,6 @@ public class Game extends GameBean implements Serializable, Comparable<Game>{
         this.language = language;
     }
 
-    @Override
     public int compareTo(Game o) {
         int result = getTitle().compareToIgnoreCase(o.getTitle());
         if (result != 0) return result;

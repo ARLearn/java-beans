@@ -11,6 +11,9 @@ public class GCMDeviceDescription extends DeviceDescription {
 	private String account;
 	private String deviceUniqueIdentifier;
 	private String registrationId;
+    private String packageIdentifier;
+
+
 	public String getAccount() {
 		return account;
 	}
@@ -29,14 +32,24 @@ public class GCMDeviceDescription extends DeviceDescription {
 	public void setDeviceUniqueIdentifier(String deviceUniqueIdentifier) {
 		this.deviceUniqueIdentifier = deviceUniqueIdentifier;
 	}
-	
-	@Override
+
+    public String getPackageIdentifier() {
+        return packageIdentifier;
+    }
+
+    public void setPackageIdentifier(String packageIdentifier) {
+        this.packageIdentifier = packageIdentifier;
+    }
+
+    @Override
 	public boolean equals(Object obj) {
 		GCMDeviceDescription other = (GCMDeviceDescription ) obj;
 		return super.equals(obj) && 
 		nullSafeEquals(getAccount(), other.getAccount()) && 
-		nullSafeEquals(getDeviceUniqueIdentifier(), other.getDeviceUniqueIdentifier()) && 
-		nullSafeEquals(getRegistrationId(), other.getRegistrationId()); 
+		nullSafeEquals(getDeviceUniqueIdentifier(), other.getDeviceUniqueIdentifier()) &&
+        nullSafeEquals(getPackageIdentifier(), other.getPackageIdentifier()) &&
+		nullSafeEquals(getRegistrationId(), other.getRegistrationId());
+
 	}
 	
 	public static class Deserializer extends BeanDeserializer{
@@ -58,6 +71,7 @@ public class GCMDeviceDescription extends DeviceDescription {
 			if (object.has("account")) bean.setAccount(object.getString("account"));
 			if (object.has("deviceUniqueIdentifier")) bean.setDeviceUniqueIdentifier(object.getString("deviceUniqueIdentifier"));
 			if (object.has("registrationId")) bean.setRegistrationId(object.getString("registrationId"));
+            if (object.has("packageIdentifier")) bean.setPackageIdentifier(object.getString("packageIdentifier"));
 		}
 
 	}
@@ -71,6 +85,7 @@ public class GCMDeviceDescription extends DeviceDescription {
 			try {
 				if (statusBean.getAccount() != null) returnObject.put("account", statusBean.getAccount());
 				if (statusBean.getDeviceUniqueIdentifier() != null) returnObject.put("deviceUniqueIdentifier", statusBean.getDeviceUniqueIdentifier());
+                if (statusBean.getPackageIdentifier() != null) returnObject.put("packageIdentifier", statusBean.getPackageIdentifier());
 				if (statusBean.getRegistrationId() != null) returnObject.put("registrationId", statusBean.getRegistrationId());
 			} catch (JSONException e) {
 				e.printStackTrace();

@@ -100,6 +100,7 @@ public class JsonBeanSerialiser extends BeanSerializer{
 		customSerializerMap.put(GeneralItem.class.getCanonicalName(), new GeneralItemSerializer());
 		customSerializerMap.put(GeneralItemList.class.getCanonicalName(), new GeneralItemListSerializer());
 		customSerializerMap.put(NarratorItem.class.getCanonicalName(), new NarratorItemSerializer());
+		customSerializerMap.put(Tutorial.class.getCanonicalName(), new NarratorItemSerializer());
 		customSerializerMap.put(OpenQuestion.class.getCanonicalName(), new OpenQuestionSerializer());
 		customSerializerMap.put(Dependency.class.getCanonicalName(), new DependencySerializer());
 		customSerializerMap.put(ActionDependency.class.getCanonicalName(), new DependencySerializer());
@@ -108,6 +109,8 @@ public class JsonBeanSerialiser extends BeanSerializer{
 		customSerializerMap.put(AndDependency.class.getCanonicalName(), new DependencySerializer());
 		customSerializerMap.put(OrDependency.class.getCanonicalName(), new DependencySerializer());
 		customSerializerMap.put(ProximityDependency.class.getCanonicalName(), new ProximityDependency.Serializer());
+		customSerializerMap.put(Notification.class.getCanonicalName(), new Notification.Serializer());
+
 		customSerializerMap.put(GamePackage.class.getCanonicalName(), new GamePackageSerializer());
 		customSerializerMap.put(Game.class.getCanonicalName(), new GameSerializer());
 		customSerializerMap.put(GameAccess.class.getCanonicalName(), GameAccess.serializer);
@@ -143,6 +146,7 @@ public class JsonBeanSerialiser extends BeanSerializer{
 		customSerializerMap.put(ResponseList.class.getCanonicalName(), new ResponseListSerializer());
 		customSerializerMap.put(UserScore.class.getCanonicalName(), new UserScoreSerializer());
 		customSerializerMap.put(AudioObject.class.getCanonicalName(), new AudioObjectSerializer());
+        customSerializerMap.put(PureAudio.class.getCanonicalName(), PureAudio.serializer);
 		customSerializerMap.put(VideoObject.class.getCanonicalName(), new VideoObjectSerializer());
 		customSerializerMap.put(MultipleChoiceTest.class.getCanonicalName(), MultipleChoiceTest.serializer);
 		customSerializerMap.put(SingleChoiceTest.class.getCanonicalName(), SingleChoiceTest.serializer);
@@ -153,6 +157,9 @@ public class JsonBeanSerialiser extends BeanSerializer{
 		customSerializerMap.put(OpenUrl.class.getCanonicalName(), OpenUrl.serializer);
 		customSerializerMap.put(ScanTag.class.getCanonicalName(), ScanTag.serializer);
         customSerializerMap.put(FileReference.class.getCanonicalName(), FileReference.serializer);
+        customSerializerMap.put(SortQuestion.class.getCanonicalName(), SortQuestion.serializer);
+        customSerializerMap.put(SortQuestionItem.class.getCanonicalName(), SortQuestionItem.serializer);
+		customSerializerMap.put(EndMessage.class.getCanonicalName(), EndMessage.serializer);
 
         customSerializerMap.put(ObjectCollectionDisplay.class.getCanonicalName(), ObjectCollectionDisplay.objectCollectionDisplaySerializer);
         customSerializerMap.put(ObjectCollectionDisplay.DisplayObject.class.getCanonicalName(), ObjectCollectionDisplay.displayObjectSerializer);

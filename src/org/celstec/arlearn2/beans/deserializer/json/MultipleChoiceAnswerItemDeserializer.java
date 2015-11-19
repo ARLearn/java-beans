@@ -41,6 +41,7 @@ public class MultipleChoiceAnswerItemDeserializer extends BeanDeserializer{
 		MultipleChoiceAnswerItem mcai = (MultipleChoiceAnswerItem) genericBean;
 		if (object.has("isCorrect")) mcai.setIsCorrect(object.getBoolean("isCorrect"));
 		if (object.has("answer")) mcai.setAnswer(object.getString("answer"));
+        if (object.has("feedback")) mcai.setFeedback(object.getString("feedback"));
 		if (object.has("nfcTag")) mcai.setNfcTag(object.getString("nfcTag"));
 		if (object.has("id")) mcai.setId(object.getString("id"));
 	}

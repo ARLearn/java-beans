@@ -45,7 +45,17 @@ public class ConfigDeserializer extends BeanDeserializer{
 		if (object.has("scoring")) oq.setScoring(object.getBoolean("scoring"));
         if (object.has("messageViews")) oq.setMessageViews(object.getInt("messageViews"));
 		if (object.has("mapAvailable")) oq.setMapAvailable(object.getBoolean("mapAvailable"));
+		if (object.has("enableMyLocation")) oq.setEnableMyLocation(object.getBoolean("enableMyLocation"));
 		if (object.has("mapType")) oq.setMapType(object.getInt("mapType"));
+		if (object.has("minZoomLevel")) oq.setMinZoomLevel(object.getInt("minZoomLevel"));
+		if (object.has("maxZoomLevel")) oq.setMaxZoomLevel(object.getInt("maxZoomLevel"));
+
+		if (object.has("boundingBoxNorth")) oq.setBoundingBoxNorth(object.getDouble("boundingBoxNorth"));
+		if (object.has("boundingBoxEast")) oq.setBoundingBoxEast(object.getDouble("boundingBoxEast"));
+		if (object.has("boundingBoxSouth")) oq.setBoundingBoxSouth(object.getDouble("boundingBoxSouth"));
+		if (object.has("boundingBoxWest")) oq.setBoundingBoxWest(object.getDouble("boundingBoxWest"));
+
+		if (object.has("tileSource")) oq.setTileSource(object.getString("tileSource"));
 		if (object.has("manualItems")) oq.setManualItems(ListDeserializer.toBean(object.getJSONArray("manualItems"), GeneralItem.class));
 		if (object.has("locationUpdates")) oq.setLocationUpdates(ListDeserializer.toBean(object.getJSONArray("locationUpdates"), LocationUpdateConfig.class));
 		if (object.has("roles")) oq.setRoles(ListDeserializer.toStringList(object.getJSONArray("roles")));

@@ -39,6 +39,17 @@ public class Config extends Bean {
 	private Boolean scoring;
     private Integer messageViews;
 	private Boolean mapAvailable;
+	private Boolean enableMyLocation;
+
+    private Integer minZoomLevel;
+    private Integer maxZoomLevel;
+
+    private Double boundingBoxNorth;
+    private Double boundingBoxEast;
+    private Double boundingBoxSouth;
+    private Double boundingBoxWest;
+
+    private String tileSource;
 	private Integer mapType;
     private String htmlMessageList;
 	
@@ -138,4 +149,70 @@ public class Config extends Bean {
         this.htmlMessageList = htmlMessageList;
     }
 
+	public Boolean getEnableMyLocation() {
+        if (enableMyLocation == null) return false;
+		return enableMyLocation;
+	}
+
+	public void setEnableMyLocation(Boolean enableMyLocation) {
+		this.enableMyLocation = enableMyLocation;
+	}
+
+    public Integer getMinZoomLevel() {
+        if (minZoomLevel == null) return 1;
+        return minZoomLevel;
+    }
+
+    public void setMinZoomLevel(Integer minZoomLevel) {
+        this.minZoomLevel = minZoomLevel;
+    }
+
+    public Integer getMaxZoomLevel() {
+        if (maxZoomLevel== null) return 20;
+        return maxZoomLevel;
+    }
+
+    public void setMaxZoomLevel(Integer maxZoomLevel) {
+        this.maxZoomLevel = maxZoomLevel;
+    }
+
+    public String getTileSource() {
+        return tileSource;
+    }
+
+    public void setTileSource(String tileSource) {
+        this.tileSource = tileSource;
+    }
+
+    public Double getBoundingBoxNorth() {
+        return boundingBoxNorth;
+    }
+
+    public void setBoundingBoxNorth(Double boundingBoxNorth) {
+        this.boundingBoxNorth = boundingBoxNorth;
+    }
+
+    public Double getBoundingBoxEast() {
+        return boundingBoxEast;
+    }
+
+    public void setBoundingBoxEast(Double boundingBoxEast) {
+        this.boundingBoxEast = boundingBoxEast;
+    }
+
+    public Double getBoundingBoxSouth() {
+        return boundingBoxSouth;
+    }
+
+    public void setBoundingBoxSouth(Double boundingBoxSouth) {
+        this.boundingBoxSouth = boundingBoxSouth;
+    }
+
+    public Double getBoundingBoxWest() {
+        return boundingBoxWest;
+    }
+
+    public void setBoundingBoxWest(Double boundingBoxWest) {
+        this.boundingBoxWest = boundingBoxWest;
+    }
 }

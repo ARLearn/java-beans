@@ -66,7 +66,7 @@ public class MessageNotification extends NotificationBean {
         this.messageId = messageId;
     }
 
-    public static BeanDeserializer deserializer = new BeanDeserializer(){
+    public static BeanDeserializer deserializer = new NotificationBeanDeserializer(){
 
         @Override
         public MessageNotification toBean(JSONObject object) {
@@ -89,7 +89,7 @@ public class MessageNotification extends NotificationBean {
         }
     };
 
-    public static BeanSerializer serializer = new BeanSerializer () {
+    public static BeanSerializer serializer = new NotificationBeanSerializer () {
 
         @Override
         public JSONObject toJSON(Object bean) {

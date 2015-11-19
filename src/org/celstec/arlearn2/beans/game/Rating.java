@@ -36,6 +36,8 @@ public class Rating extends Bean {
 
     private Long gameId;
 
+    private Long amount;
+
     public Integer getUserProviderId() {
         return userProviderId;
     }
@@ -68,6 +70,14 @@ public class Rating extends Bean {
         this.gameId = gameId;
     }
 
+    public Long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
+    }
+
     public static BeanDeserializer deserializer = new BeanDeserializer(){
 
         @Override
@@ -86,8 +96,9 @@ public class Rating extends Bean {
             Rating bean = (Rating) genericBean;
             if (object.has("userProviderId")) bean.setUserProviderId(object.getInt("userProviderId"));
             if (object.has("userId")) bean.setUserId(object.getString("userId"));
-            if (object.has("rating")) bean.setUserProviderId(object.getInt("rating"));
+            if (object.has("rating")) bean.setRating(object.getInt("rating"));
             if (object.has("gameId")) bean.setGameId(object.getLong("gameId"));
+            if (object.has("amount")) bean.setAmount(object.getLong("amount"));
         }
     };
 
@@ -102,6 +113,7 @@ public class Rating extends Bean {
                 if (ratingBean.getUserId() != null) returnObject.put("userId", ratingBean.getUserId());
                 if (ratingBean.getRating() != null) returnObject.put("rating", ratingBean.getRating());
                 if (ratingBean.getGameId() != null) returnObject.put("gameId", ratingBean.getGameId());
+                if (ratingBean.getAmount() != null) returnObject.put("amount", ratingBean.getAmount());
             } catch (JSONException e) {
                 e.printStackTrace();
             }

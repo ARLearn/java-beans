@@ -30,6 +30,7 @@ public class MultipleChoiceAnswerItemSerializer extends BeanSerializer{
 		JSONObject returnObject = super.toJSON(bean);
 		try {
 			if (mcai.getAnswer() != null) returnObject.put("answer", mcai.getAnswer());
+            if (mcai.getFeedback() != null) returnObject.put("feedback", mcai.getFeedback());
 			if (mcai.getId() != null) returnObject.put("id", mcai.getId());
 			if (mcai.getNfcTag() != null) returnObject.put("nfcTag", mcai.getNfcTag());
 			if (mcai.getIsCorrect() != null) returnObject.put("isCorrect", mcai.getIsCorrect());

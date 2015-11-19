@@ -28,6 +28,7 @@ public class Response extends RunBean implements Comparable<Response>{
 	private String responseValue;
 	private Long responseItemId;
 	private Long timestamp;
+    private Long lastModificationDate;
     private Boolean revoked;
     private Double lat;
     private Double lng;
@@ -106,6 +107,14 @@ public class Response extends RunBean implements Comparable<Response>{
 
     public void setLng(Double lng) {
         this.lng = lng;
+    }
+
+    public Long getLastModificationDate() {
+        return lastModificationDate;
+    }
+
+    public void setLastModificationDate(Long lastModificationDate) {
+        this.lastModificationDate = lastModificationDate;
     }
 
     @Override

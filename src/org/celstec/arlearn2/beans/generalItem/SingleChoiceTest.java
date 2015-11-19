@@ -36,7 +36,9 @@ public class SingleChoiceTest extends GeneralItem {
 	private List<MultipleChoiceAnswerItem> answers = new Vector();
 	private String richText;
 	private String text;
-	
+
+    private Boolean showFeedback;
+
 	public SingleChoiceTest() {
 		
 	}
@@ -56,7 +58,16 @@ public class SingleChoiceTest extends GeneralItem {
 	public String getText() {
 		return text;
 	}
-	public void setText(String text) {
+
+    public Boolean getShowFeedback() {
+        return showFeedback;
+    }
+
+    public void setShowFeedback(Boolean showFeedback) {
+        this.showFeedback = showFeedback;
+    }
+
+    public void setText(String text) {
 		this.text = text;
 	}
 	
@@ -79,6 +90,7 @@ public class SingleChoiceTest extends GeneralItem {
 			try {
 				if (mct.getText() != null) returnObject.put("text", mct.getText());
 				if (mct.getRichText() != null) returnObject.put("richText", mct.getRichText());
+                if (mct.getShowFeedback()!= null) returnObject.put("showFeedback", mct.getShowFeedback());
 				if (mct.getAnswers() != null) returnObject.put("answers", ListSerializer.toJSON(mct.getAnswers()));
 			} catch (JSONException e) {
 				e.printStackTrace();
@@ -106,6 +118,7 @@ public class SingleChoiceTest extends GeneralItem {
 			SingleChoiceTest mctItem = (SingleChoiceTest) genericBean;
 			if (object.has("richText")) mctItem.setRichText(object.getString("richText"));
 			if (object.has("text")) mctItem.setText(object.getString("text"));
+            if (object.has("showFeedback")) mctItem.setShowFeedback(object.getBoolean("showFeedback"));
 			if (object.has("answers")) mctItem.setAnswers(ListDeserializer.toBean(object.getJSONArray("answers"), MultipleChoiceAnswerItem.class));
 		}
 	}

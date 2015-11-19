@@ -63,6 +63,7 @@ public class GeneralItemDeserializer extends GameBeanDeserializer {
         if (object.has("showInList")) gi.setShowInList(object.getBoolean("showInList"));
 		if (object.has("dependsOn")) gi.setDependsOn((Dependency) JsonBeanDeserializer.deserialize(Dependency.class, object.getJSONObject("dependsOn")));
 		if (object.has("disappearOn")) gi.setDisappearOn((Dependency) JsonBeanDeserializer.deserialize(Dependency.class, object.getJSONObject("disappearOn")));
+		if (object.has("notification")) gi.setNotification((Notification) JsonBeanDeserializer.deserialize(Notification.class, object.getJSONObject("notification")));
 		if (object.has("roles")) gi.setRoles(ListDeserializer.toStringList(object.getJSONArray("roles")));
         if (object.has("fileReferences")) gi.setFileReferences(ListDeserializer.toBean(object.getJSONArray("fileReferences"), FileReference.class));
 

@@ -19,6 +19,10 @@
 package org.celstec.arlearn2.beans.notification;
 
 import org.celstec.arlearn2.beans.Bean;
+import org.celstec.arlearn2.beans.deserializer.json.BeanDeserializer;
+import org.celstec.arlearn2.beans.serializer.json.BeanSerializer;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 public class NotificationBean extends Bean {
 	
@@ -37,9 +41,53 @@ public class NotificationBean extends Bean {
 
 	public final static int TEAM_ALTERED = 20;
 
-			
+    private String alert;
+
 	public void retainOnlyIdentifier() {
 		
 	}
 
+    public String getAlert() {
+        return alert;
+    }
+
+    public void setAlert(String alert) {
+        this.alert = alert;
+    }
+
+    public static class NotificationBeanDeserializer extends BeanDeserializer{
+
+        @Override
+        public NotificationBean toBean(JSONObject object) {
+            NotificationBean bean = new NotificationBean();
+            try {
+                initBean(object, bean);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return bean;
+        }
+
+        public void initBean(JSONObject object, Bean genericBean) throws JSONException {
+            super.initBean(object, genericBean);
+            NotificationBean bean = (NotificationBean) genericBean;
+            if (object.has("alert")) bean.setAlert(object.getString("alert"));
+        }
+    };
+
+    public static class NotificationBeanSerializer extends BeanSerializer {
+
+        @Override
+        public JSONObject toJSON(Object bean) {
+            NotificationBean gameBean = (NotificationBean) bean;
+            JSONObject returnObject = super.toJSON(bean);
+            try {
+                if (gameBean.getAlert() != null) returnObject.put("alert", gameBean.getAlert());
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return returnObject;
+        }
+    };
 }
