@@ -40,6 +40,7 @@ public class Config extends Bean {
     private Integer messageViews;
 	private Boolean mapAvailable;
 	private Boolean enableMyLocation;
+    private Boolean enableExchangeResponses;
 
     private Integer minZoomLevel;
     private Integer maxZoomLevel;
@@ -214,5 +215,14 @@ public class Config extends Bean {
 
     public void setBoundingBoxWest(Double boundingBoxWest) {
         this.boundingBoxWest = boundingBoxWest;
+    }
+
+    public Boolean getEnableExchangeResponses() {
+        if (enableExchangeResponses == null) return true;
+        return enableExchangeResponses;
+    }
+
+    public void setEnableExchangeResponses(Boolean enableExchangeResponses) {
+        this.enableExchangeResponses = enableExchangeResponses;
     }
 }

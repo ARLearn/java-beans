@@ -45,6 +45,7 @@ public class ConfigDeserializer extends BeanDeserializer{
 		if (object.has("scoring")) oq.setScoring(object.getBoolean("scoring"));
         if (object.has("messageViews")) oq.setMessageViews(object.getInt("messageViews"));
 		if (object.has("mapAvailable")) oq.setMapAvailable(object.getBoolean("mapAvailable"));
+		if (object.has("enableExchangeResponses")) oq.setEnableExchangeResponses(object.getBoolean("enableExchangeResponses"));
 		if (object.has("enableMyLocation")) oq.setEnableMyLocation(object.getBoolean("enableMyLocation"));
 		if (object.has("mapType")) oq.setMapType(object.getInt("mapType"));
 		if (object.has("minZoomLevel")) oq.setMinZoomLevel(object.getInt("minZoomLevel"));
